@@ -52,11 +52,13 @@ class Test extends Card {
   }
 
   didRender() {
+    super.didRender();
     this.#vm = createApp(TestVue, {});
     this.#vm.mount(this.#container?.get<HTMLElement>());
   }
 
   destroy() {
+    super.destroy();
     this.#vm?.unmount();
   }
 }
